@@ -17,7 +17,7 @@
 		var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 		var messages = ["Alles Gute zum Geburtstag!", "Herzlichen Glückwunsch!", "Viel Glück im neuen Lebensjahr!", "Gesundheit und Wohlbefinden!", "Erfolg und Zufriedenheit!", "Frohes neues Jahr!"];
 		
-		for (var i = 0; i < 100; i++) {
+		function addMessage() {
 			var message = messages[Math.floor(Math.random() * messages.length)];
 			var color = colors[Math.floor(Math.random() * colors.length)];
 			
@@ -38,7 +38,11 @@
 					document.body.removeChild(span);
 				};
 			}(span), duration);
+			
+			setTimeout(addMessage, 5000);
 		}
+		
+		addMessage();
 	</script>
 </body>
 </html>
