@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Palme und Helm</title>
+    <style>
+      body {
+        background-color: blue;
+      }
+      #stift {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        border: 2px solid black;
+      }
+      #palme {
+        position: relative;
+        display: inline-block;
+      }
+      #helm {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="palme">
+      <img src="palme.jpg" alt="Palme">
+      <img id="helm" src="helm.jpg" alt="Helm">
+    </div>
+    <div id="stift"></div>
+  </body>
+</html>
