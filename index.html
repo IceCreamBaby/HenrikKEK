@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Palme und Helm</title>
-    <style>
-      body {
-        background-color: blue;
-      }
-      #stift {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        background-color: white;
-        border: 2px solid black;
-      }
-      #palme {
-        position: relative;
-        display: inline-block;
-      }
-      #helm {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="palme">
-      <img src="palme.jpg" alt="Palme">
-      <img id="helm" src="helm.jpg" alt="Helm">
-    </div>
-    <div id="stift"></div>
-  </body>
+<head>
+	<title>Henrik's Birthday</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Herzlichen Glückwunsch zum Geburtstag, Henrik!</h1>
+	<script>
+		var colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+		var messages = ["Alles Gute zum Geburtstag!", "Herzlichen Glückwunsch!", "Viel Glück im neuen Lebensjahr!", "Gesundheit und Wohlbefinden!", "Erfolg und Zufriedenheit!", "Frohes neues Jahr!"];
+		
+		for (var i = 0; i < 100; i++) {
+			var message = messages[Math.floor(Math.random() * messages.length)];
+			var color = colors[Math.floor(Math.random() * colors.length)];
+			
+			var span = document.createElement("span");
+			span.style.color = color;
+			span.style.fontSize = Math.floor(Math.random() * 40 + 20) + "px";
+			span.style.position = "absolute";
+			span.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+			span.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
+			span.innerHTML = message;
+			
+			document.body.appendChild(span);
+			
+			var duration = Math.floor(Math.random() * 5000 + 1000);
+			
+			setTimeout(function(span) {
+				return function() {
+					document.body.removeChild(span);
+				};
+			}(span), duration);
+		}
+	</script>
+</body>
 </html>
